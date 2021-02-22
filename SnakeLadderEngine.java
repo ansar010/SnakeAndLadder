@@ -5,7 +5,9 @@ import snakeladder.Player;
 public class SnakeLadderEngine{
     public static void loader(){
         Player p1 = new Player();
-        start(p1);
+        while(p1.getPosition() != Player.END_POSITION){
+            start(p1);
+        }
     }
     private static void start(Player p1){
         int dieCount = throwDie();
