@@ -4,9 +4,11 @@ public class Player{
     public static final int END_POSITION = 100;
     private int position;
     private int totNoMoves;
+    private boolean chance;
     Player(){
         position = 0;
         totNoMoves = 0;
+        chance = false;
     }
     
     public void move(int opt){
@@ -31,5 +33,14 @@ public class Player{
     }
     public int getTotalMoves(){
         return totNoMoves;
+    }
+    public void setChance(boolean var){
+        chance = var;
+    }
+    public boolean getChance(){
+        return chance;
+    }
+    public boolean is_end_position(){
+        return position == END_POSITION;
     }
 }
