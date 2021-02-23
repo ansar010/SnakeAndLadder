@@ -62,14 +62,26 @@ public class SnakeLadderEngine{
             if(opt <= 0){
                 p1.setChance(false);
                 p2.setChance(true);
+                if(opt == 0)
+                    System.out.println("Player 1: No move");
+                else
+                    System.out.println("Player 1: Bit by snake, going down by "+ (-1)*opt );
             }
+            if(opt > 0)
+                System.out.println("Player 1: Going up the ladder by " + opt);
             p1.move(opt);
         }
         else{
             if(opt <= 0){
                 p2.setChance(false);
                 p1.setChance(true);
+                if(opt == 0)
+                    System.out.println("Player 2: No move");
+                else
+                    System.out.println("Player 2: Bit by snake, going down by "+ (-1)*opt);
             }
+            if(opt > 0)
+                System.out.println("Player 2: Going up the ladder by "+ opt);
             p2.move(opt);
         }
     }
