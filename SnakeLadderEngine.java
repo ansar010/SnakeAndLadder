@@ -43,10 +43,9 @@ public class SnakeLadderEngine{
                 return 0;
             case 1:
                 return dieCount;
-            case 2:
+            default:
                 return (-1)*dieCount;
         }
-        return -1;
     }
     private static void decidesThrowFirst(Player p1, Player p2){
         Random rand = new Random();
