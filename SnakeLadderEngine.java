@@ -1,4 +1,5 @@
 package snakeladder;
+import java.util.Scanner;
 import java.util.Random;
 import snakeladder.Player;
 
@@ -7,10 +8,12 @@ public class SnakeLadderEngine{
     public static void loader(){
         Player p1 = new Player();
         Player p2 = new Player();
+        Scanner sc = new Scanner(System.in);
         decidesThrowFirst(p1, p2);
         while(!p1.is_end_position() && !p2.is_end_position()){
             start(p1, p2);
             printDetails(p1, p2);
+            sc.nextLine();
         }
         if(p1.is_end_position()){
             System.out.println("Player One won the game");
@@ -19,8 +22,8 @@ public class SnakeLadderEngine{
         else{
             System.out.println("Player two won the game");
             System.out.println("Total moves taken: " + p2.getTotalMoves());
-
         }
+        sc.close();
     }
     private static void start(Player p1, Player p2){
         int dieCount = throwDie();
